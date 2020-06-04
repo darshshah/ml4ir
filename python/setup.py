@@ -1,7 +1,6 @@
 from setuptools import find_namespace_packages, setup
 
 def load_dependencies():
-	required = []
 	with open('requirements.txt') as f:
 		required = f.read().splitlines()
 	return required
