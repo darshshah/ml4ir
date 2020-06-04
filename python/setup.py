@@ -1,5 +1,11 @@
 from setuptools import find_namespace_packages, setup
 
+def load_dependencies():
+	required = []
+	with open('requirements.txt') as f:
+		required = f.read().splitlines()
+	return required
+
 setup(
     name="ml4ir",
     packages=find_namespace_packages(include=["ml4ir.*"]),
@@ -8,4 +14,5 @@ setup(
     author="Search Relevance, Salesforce",
     author_email="searchrelevancyscrumteam@salesforce.com ",
     license="ASL 2.0",
+	install_requires=load_dependencies()
 )
